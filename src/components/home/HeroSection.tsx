@@ -24,7 +24,7 @@ const HeroSection = () => {
           {/* Headline */}
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-fade-in animation-delay-100">
             Transforming Facility Management Into{" "}
-            <span className="text-gradient">Smart Digital Excellence</span>
+            <span className="text-gradient">Smart Digital Solutions</span>
           </h1>
 
           {/* Subheadline */}

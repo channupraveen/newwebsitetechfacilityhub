@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Building2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -20,12 +20,15 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-              <Building2 className="w-6 h-6 text-primary-foreground" />
-            </div>
-            <span className="font-display font-bold text-xl text-foreground">
-              Tech<span className="text-accent">FacilityHub</span>
+          <Link to="/" className="flex items-center gap-3 group">
+            <img
+              src="/TF HUB LOGO.png"
+              alt="Tech Facility Hub logo"
+              className="h-12 w-auto object-contain transition-transform group-hover:scale-105"
+            />
+            <span className="font-display font-bold text-xl lg:text-2xl">
+              <span className="text-blue-600">Tech Facility </span>
+              <span className="text-green-600">Hub</span>
             </span>
           </Link>
 
