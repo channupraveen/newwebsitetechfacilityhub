@@ -8,7 +8,7 @@ const TeamSection = () => {
     {
       name: "Godugu Venkatesh",
       role: "Founder & CEO",
-      image: "/placeholder.svg",
+      image: "/venkatesh.jpeg",
       linkedin: "#",
     },
     {
