@@ -124,20 +124,32 @@ const Services = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-20 lg:py-28 bg-gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-20 w-80 h-80 bg-accent/30 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-20 w-60 h-60 bg-primary/20 rounded-full blur-3xl" />
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000"
+            alt="Modern facility and technology"
+            className="w-full h-full object-cover"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-accent/80"></div>
+          {/* Animated gradient circles */}
+          <div className="absolute inset-0">
+            <div className="absolute top-20 left-20 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-pulse-gentle" />
+            <div className="absolute bottom-20 right-20 w-60 h-60 bg-primary/20 rounded-full blur-3xl animate-pulse-gentle-delayed" />
+          </div>
         </div>
-        <div className="container mx-auto px-4 lg:px-8 relative">
+        
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-medium mb-6 border border-white/20">
               Our Services
             </span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
               Digital Facility Management Solutions
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto drop-shadow-md">
               Comprehensive suite of digital tools designed to streamline every
               aspect of your facility operations.
             </p>
