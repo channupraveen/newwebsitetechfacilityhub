@@ -143,7 +143,7 @@ const About = () => {
               {/* Text Content */}
               <div className={`${introVisible ? 'scroll-fade-left' : 'scroll-hidden'}`}>
                 <p className="text-xl text-muted-foreground leading-relaxed mb-6">
-                  <strong className="text-foreground">TechFacility Hub</strong> is a technology company focused on helping organizations digitize maintenance and facility operations.
+                  <strong className="text-foreground">TechFacilityHub</strong> is a technology company focused on helping organizations digitize maintenance and facility operations.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   We build software platforms that bring structure, accountability, and visibility to maintenance workflows across industries.
@@ -182,7 +182,7 @@ const About = () => {
                   Facility and maintenance work is often unstructured, lost in spreadsheets, WhatsApp, or manual processes. This leads to delays, inefficiency, accountability gaps, and operational confusion.
                 </p>
                 <p className="text-lg text-foreground font-semibold">
-                  TechFacility Hub was created to fix this gap with a digital, structured, and accountable system.
+                  TechFacilityHub was created to fix this gap with a digital, structured, and accountable system.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4">

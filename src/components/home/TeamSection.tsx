@@ -46,7 +46,7 @@ const TeamSection = () => {
             Meet Our Team
           </h2>
           <p className="text-lg text-muted-foreground">
-            The people behind TechFacility Hub — building systems that work
+            The people behind TechFacilityHub — building systems that work
           </p>
         </div>
 

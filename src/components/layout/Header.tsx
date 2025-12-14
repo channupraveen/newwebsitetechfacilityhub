@@ -27,7 +27,7 @@ const Header = () => {
               className="h-12 w-auto object-contain transition-transform group-hover:scale-105"
             />
             <span className="font-display font-bold text-xl lg:text-2xl">
-              <span className="text-blue-600">Tech Facility </span>
+              <span className="text-blue-600">TechFacility</span>
               <span className="text-green-600">Hub</span>
             </span>
           </Link>

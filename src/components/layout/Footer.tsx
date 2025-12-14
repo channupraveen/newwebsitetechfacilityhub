@@ -15,7 +15,8 @@ const Footer = () => {
                 className="h-14 w-auto object-contain"
               />
               <span className="font-display font-bold text-xl">
-                Tech<span className="text-accent">FacilityHub</span>
+                <span className="text-blue-600">TechFacility</span>
+                <span className="text-green-600">Hub</span>
               </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
