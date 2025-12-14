@@ -14,6 +14,7 @@ import {
   ArrowRight,
   CheckCircle,
 } from "lucide-react";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const services = [
   {
@@ -118,6 +119,8 @@ const services = [
 ];
 
 const Services = () => {
+  const { ref: servicesRef, isVisible: servicesVisible } = useScrollAnimation({ threshold: 0.1 });
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -143,23 +146,64 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 lg:py-28 bg-background">
+      <section ref={servicesRef} className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="space-y-8">
+          <div className="space-y-16">
             {services.map((service, index) => (
               <div
                 key={service.title}
                 className={`flex flex-col lg:flex-row gap-8 lg:gap-16 items-center ${
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                }`}
+                } ${servicesVisible ? `scroll-fade-up stagger-${(index % 6) + 1}` : 'scroll-hidden'}`}
               >
-                {/* Icon Card */}
+                {/* Animated Icon Card */}
                 <div className="lg:w-1/3">
-                  <div className="p-10 rounded-3xl bg-gradient-primary shadow-xl relative overflow-hidden">
-                    <div className="absolute inset-0 opacity-20">
-                      <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent rounded-full blur-2xl" />
+                  <div className="group relative">
+                    {/* Main card with subtle background */}
+                    <div className="relative p-8 rounded-3xl bg-gradient-to-br from-slate-50 to-white shadow-lg overflow-hidden transition-all duration-500 group-hover:shadow-2xl border border-slate-200/50">
+                      {/* Animated background gradient circles */}
+                      <div className="absolute inset-0 opacity-40">
+                        <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-3xl animate-pulse-gentle" />
+                        <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-to-br from-accent/15 to-primary/15 rounded-full blur-3xl animate-pulse-gentle-delayed" />
+                      </div>
+                      
+                      {/* Icon container */}
+                      <div className="relative flex items-center justify-center">
+                        {/* Glowing background circle */}
+                        <div className="absolute w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-xl animate-pulse-gentle"></div>
+                        
+                        {/* Icon circle with gradient border */}
+                        <div className="relative w-28 h-28 rounded-full bg-white shadow-xl flex items-center justify-center group-hover:scale-110 transition-all duration-500 border-4 border-transparent bg-clip-padding">
+                          {/* Gradient border effect */}
+                          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-accent to-primary opacity-100 -z-10 blur-sm"></div>
+                          
+                          {/* Icon with gradient color */}
+                          <div className="relative">
+                            <service.icon 
+                              className="w-14 h-14 animate-float" 
+                              strokeWidth={1.5}
+                              style={{
+                                stroke: 'url(#iconGradient)',
+                                fill: 'none'
+                              }}
+                            />
+                            {/* SVG gradient definition */}
+                            <svg width="0" height="0" className="absolute">
+                              <defs>
+                                <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                  <stop offset="0%" style={{ stopColor: 'hsl(220, 70%, 25%)', stopOpacity: 1 }} />
+                                  <stop offset="100%" style={{ stopColor: 'hsl(175, 70%, 40%)', stopOpacity: 1 }} />
+                                </linearGradient>
+                              </defs>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Decorative elements */}
+                      <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-accent animate-ping-gentle opacity-50"></div>
+                      <div className="absolute bottom-6 left-6 w-1.5 h-1.5 rounded-full bg-primary animate-ping-gentle opacity-50" style={{ animationDelay: '1s' }}></div>
                     </div>
-                    <service.icon className="w-20 h-20 text-primary-foreground relative" />
                   </div>
                 </div>
 
@@ -199,7 +243,7 @@ const Services = () => {
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">
               Ready to Streamline Your Operations?
             </h2>
-            <p className="text-lg text-primary-foreground/70 mb-8">
+            <p className="text-lg text-primary-foreground/90 mb-8">
               Let us show you how TechFacilityHub can transform your facility
               management.
             </p>
@@ -207,10 +251,10 @@ const Services = () => {
               <Button
                 variant="accent"
                 size="xl"
-                className="group"
+                className="group shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Request a Demo
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           </div>
