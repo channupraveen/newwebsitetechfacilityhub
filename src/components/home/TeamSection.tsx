@@ -6,27 +6,15 @@ const TeamSection = () => {
 
   const team = [
     {
-      name: "John Doe",
+      name: "Godugu Venkatesh",
       role: "Founder & CEO",
       image: "/placeholder.svg",
       linkedin: "#",
     },
     {
-      name: "Jane Smith",
-      role: "CTO",
-      image: "/placeholder.svg",
-      linkedin: "#",
-    },
-    {
-      name: "Mike Johnson",
-      role: "Head of Operations",
-      image: "/placeholder.svg",
-      linkedin: "#",
-    },
-    {
-      name: "Sarah Wilson",
-      role: "Lead Developer",
-      image: "/placeholder.svg",
+      name: "Channu Praveen Kumar",
+      role: "Co-Founder & Head of Product",
+      image: "/praveen.jpeg",
       linkedin: "#",
     },
   ];
@@ -43,11 +31,11 @@ const TeamSection = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        <div className="flex justify-center gap-8 max-w-5xl mx-auto">
           {team.map((member, index) => (
             <div
               key={index}
-              className={`group text-center card-hover-lift ${
+              className={`group text-center card-hover-lift w-64 ${
                 isVisible ? `scroll-scale-up stagger-${index + 1}` : 'scroll-hidden'
               }`}
             >
