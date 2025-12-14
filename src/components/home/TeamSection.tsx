@@ -47,29 +47,29 @@ const TeamSection = () => {
           {team.map((member, index) => (
             <div
               key={index}
-              className={`group text-center ${
+              className={`group text-center card-hover-lift ${
                 isVisible ? `scroll-scale-up stagger-${index + 1}` : 'scroll-hidden'
               }`}
             >
-              <div className="relative mb-5 overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 aspect-square">
+              <div className="relative mb-5 overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 aspect-square shadow-md group-hover:shadow-xl transition-shadow duration-300">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 {/* Hover overlay with social links */}
-                <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-primary/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-3">
                   <a
                     href={member.linkedin}
-                    className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+                    className="w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center transition-all duration-300 hover:scale-110"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Linkedin className="w-5 h-5 text-white" />
+                    <Linkedin className="w-6 h-6 text-white" />
                   </a>
                 </div>
               </div>
-              <h3 className="font-display text-lg font-semibold text-foreground mb-1">
+              <h3 className="font-display text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
                 {member.name}
               </h3>
               <p className="text-muted-foreground text-sm">

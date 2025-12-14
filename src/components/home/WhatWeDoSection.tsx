@@ -43,12 +43,12 @@ const WhatWeDoSection = () => {
           {items.map((item, index) => (
             <div
               key={index}
-              className={`group text-center p-6 rounded-2xl transition-all duration-300 hover:bg-slate-50 ${
+              className={`group text-center p-6 rounded-2xl transition-all duration-300 hover:bg-slate-50 hover:shadow-lg card-hover-lift ${
                 isVisible ? `scroll-fade-up stagger-${index + 1}` : 'scroll-hidden'
               }`}
             >
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 mb-6 group-hover:from-primary/20 group-hover:to-accent/20 transition-all duration-300">
-                <item.icon className="w-8 h-8 text-primary group-hover:text-accent transition-colors duration-300" />
+                <item.icon className="w-8 h-8 text-primary group-hover:text-accent transition-colors duration-300 hover-wiggle" />
               </div>
               <h3 className="font-display text-xl font-semibold text-foreground mb-3">
                 {item.title}

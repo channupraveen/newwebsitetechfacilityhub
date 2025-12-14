@@ -47,15 +47,15 @@ const WhyTechFacilitySection = () => {
               {reasons.map((reason, index) => (
                 <div
                   key={index}
-                  className={`flex gap-4 p-4 rounded-xl hover:bg-slate-50 transition-colors duration-300 ${
+                  className={`group flex gap-4 p-4 rounded-xl hover:bg-slate-50 hover:shadow-md transition-all duration-300 cursor-pointer ${
                     isVisible ? `scroll-fade-right stagger-${index + 1}` : 'scroll-hidden'
                   }`}
                 >
-                  <div className="flex-shrink-0 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10">
-                    <reason.icon className="w-6 h-6 text-primary" />
+                  <div className="flex-shrink-0 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 group-hover:from-primary/20 group-hover:to-accent/20 transition-all duration-300">
+                    <reason.icon className="w-6 h-6 text-primary hover-float" />
                   </div>
                   <div>
-                    <h3 className="font-display text-lg font-semibold text-foreground mb-1">
+                    <h3 className="font-display text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
                       {reason.title}
                     </h3>
                     <p className="text-muted-foreground">
