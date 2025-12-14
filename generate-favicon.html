@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            margin: 10px 0;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Generate Favicon from Logo</h1>
+    <p>This will create a 32x32 favicon from your logo</p>
+    
+    <canvas id="canvas" width="32" height="32"></canvas>
+    <br>
+    <button onclick="generateFavicon()">Generate & Download Favicon</button>
+    
+    <script>
+        function generateFavicon() {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Load your logo
+            const img = new Image();
+            img.onload = function() {
+                // Clear canvas
+                ctx.clearRect(0, 0, 32, 32);
+                
+                // Draw image scaled to 32x32
+                ctx.drawImage(img, 0, 0, 32, 32);
+                
+                // Convert to ICO/PNG and download
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'favicon.ico';
+                    a.click();
+                    URL.revokeObjectURL(url);
+                    alert('Favicon downloaded! Replace the old favicon.ico in the public folder.');
+                }, 'image/png');
+            };
+            
+            img.src = '/TF HUB LOGO.png';
+        }
+    </script>
+</body>
+</html>
