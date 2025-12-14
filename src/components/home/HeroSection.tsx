@@ -31,7 +31,7 @@ const HeroSection = () => {
               <stop offset="0%" stopColor="hsl(220, 70%, 50%)" stopOpacity="0.5" />
               <stop offset="100%" stopColor="hsl(200, 70%, 50%)" stopOpacity="0.7" />
             </linearGradient>
-            
+
             {/* Green gradient for final state */}
             <linearGradient id="completionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="hsl(200, 70%, 50%)" stopOpacity="0.6" />
@@ -40,38 +40,38 @@ const HeroSection = () => {
           </defs>
 
           {/* Generate 6x5 grid = 30 dots for more visual impact */}
-          
+
           {/* Row 1 - Y: 150 */}
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="120;200;250" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="380;220;150" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="380;350;400" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="280;200;150" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="620;500;550" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="120;180;150" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="880;650;700" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="200;160;150" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="1050;800;850" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="180;140;150" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="1280;950;1000" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="140;200;150" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
@@ -84,31 +84,31 @@ const HeroSection = () => {
             <animate attributeName="cy" values="450;300;250" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="450;380;400" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="180;280;250" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="680;480;550" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="340;220;250" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="920;620;700" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="280;260;250" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="1100;780;850" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="320;240;250" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="1220;920;1000" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="200;280;250" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
@@ -121,31 +121,31 @@ const HeroSection = () => {
             <animate attributeName="cy" values="520;380;350" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="320;360;400" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="180;320;350" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="720;520;550" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="420;380;350" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="820;660;700" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="280;320;350" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="1150;820;850" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="420;380;350" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="1320;960;1000" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="320;360;350" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
@@ -158,31 +158,31 @@ const HeroSection = () => {
             <animate attributeName="cy" values="280;420;450" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="520;340;400" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="520;480;450" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="480;560;550" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="580;420;450" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="950;680;700" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="520;480;450" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="1020;860;850" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="580;420;450" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="1280;980;1000" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="480;460;450" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
@@ -195,31 +195,31 @@ const HeroSection = () => {
             <animate attributeName="cy" values="620;520;550" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="580;320;400" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="480;580;550" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="420;540;550" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="320;520;550" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="880;720;700" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="620;580;550" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="1180;840;850" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="480;520;550" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite" />
           </circle>
-          
+
           <circle r="4" fill="hsl(220, 70%, 50%)">
             <animate attributeName="cx" values="1250;1020;1000" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
             <animate attributeName="cy" values="620;580;550" dur="8s" repeatCount="indefinite" keyTimes="0;0.5;1" />
@@ -338,7 +338,7 @@ const HeroSection = () => {
         {/* Soft background elements */}
         <div className="absolute top-1/3 right-1/4 w-32 h-32 border border-primary/3 rounded-2xl rotate-12 animate-rotate-slower" />
         <div className="absolute bottom-1/4 left-1/4 w-24 h-24 border border-accent/3 rounded-2xl -rotate-12 animate-rotate-reverse-slower" />
-        
+
         {/* Gentle gradient orbs */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/2 rounded-full blur-3xl animate-pulse-very-gentle" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/2 rounded-full blur-3xl animate-pulse-very-gentle-delayed" />
@@ -347,13 +347,12 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 lg:px-8 pt-8 pb-20 relative w-full">
         <div className="max-w-5xl mx-auto text-center">
           {/* Headline */}
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-8 animate-fade-in">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-fade-in">
             Digitizing Maintenance & Facility{" "}
-            <span className="inline-block min-w-[200px] md:min-w-[280px] lg:min-w-[360px] text-left">
-              <span 
-                className={`text-accent transition-all duration-300 inline-block ${
-                  isAnimating ? 'opacity-0 -translate-y-3' : 'opacity-100 translate-y-0'
-                }`}
+            <span className="inline-block min-w-[200px] md:min-w-[280px] lg:min-w-[360px] text-left overflow-visible leading-normal">
+              <span
+                className={`bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent transition-all duration-300 inline-block leading-normal ${isAnimating ? 'opacity-0 -translate-y-3' : 'opacity-100 translate-y-0'
+                  }`}
               >
                 {words[currentWordIndex]}
               </span>
