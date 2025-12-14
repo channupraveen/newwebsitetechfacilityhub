@@ -16,8 +16,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    content: "goduguvenkatesh0305@gmail.com",
-    href: "mailto:goduguvenkatesh0305@gmail.com",
+    content: " techfacilityhub@gmail.com",
+    href: "mailto: techfacilityhub@gmail.com",
   },
   {
     icon: MapPin,
