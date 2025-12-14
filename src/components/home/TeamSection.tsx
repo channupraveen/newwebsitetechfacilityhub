@@ -8,12 +8,20 @@ const TeamSection = () => {
     {
       name: "Godugu Venkatesh",
       role: "Founder & CEO",
+      title: "Director & CEO",
+      description: "A visionary leader focused on transforming traditional facility management into smart, data-driven operations. With a strong understanding of on-ground challenges, he drives innovation that delivers real operational impact.",
+      specialization: "Advisory & Strategic Direction",
+      additionalInfo: "Our advisory and strategic team guides TechFacilityHub with industry insights, technology expertise, and scalable growth strategies to ensure long-term value for our customers and partners.",
       image: "/venkatesh.jpeg",
       linkedin: "#",
     },
     {
-      name: "Channu Praveen Kumar",
-      role: "Co-Founder & Head of Product",
+      name: "Praveen Kumar",
+      role: "Co-Founder & Chief Technology Officer (CTO)",
+      title: "Co-Founder & CTO",
+      description: "A technology-driven co-founder responsible for building and scaling TechFacilityHub's core platform. With strong expertise in modern web technologies and system design, he translates real-world hospital and facility maintenance challenges into secure, scalable, and intelligent digital solutions.",
+      specialization: "Product Architecture, Engineering & Platform Scalability",
+      additionalInfo: "He leads product architecture, backend and frontend engineering, and ensures the platform remains reliable, flexible, and ready for future AI-driven automation.",
       image: "/praveen.jpeg",
       linkedin: "#",
     },
@@ -31,38 +39,66 @@ const TeamSection = () => {
           </p>
         </div>
 
-        <div className="flex justify-center gap-8 max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto space-y-12">
           {team.map((member, index) => (
             <div
               key={index}
-              className={`group text-center card-hover-lift w-64 ${
-                isVisible ? `scroll-scale-up stagger-${index + 1}` : 'scroll-hidden'
-              }`}
+              className={`${isVisible ? `scroll-fade-up stagger-${index + 1}` : 'scroll-hidden'}`}
             >
-              <div className="relative mb-5 overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 aspect-square shadow-md group-hover:shadow-xl transition-shadow duration-300">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                {/* Hover overlay with social links */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-primary/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-3">
-                  <a
-                    href={member.linkedin}
-                    className="w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center transition-all duration-300 hover:scale-110"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Linkedin className="w-6 h-6 text-white" />
-                  </a>
+              <div className="bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-200/60 hover:shadow-xl transition-shadow duration-300">
+                <div className="grid md:grid-cols-5 gap-8 p-8 lg:p-12">
+                  {/* Member Image */}
+                  <div className="md:col-span-2">
+                    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 aspect-square shadow-md">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    {/* Social Link */}
+                    <div className="mt-6 flex justify-center">
+                      <a
+                        href={member.linkedin}
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary/10 hover:bg-primary/20 text-primary font-medium transition-all duration-300 hover:scale-105"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Linkedin className="w-5 h-5" />
+                        <span>Connect on LinkedIn</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Member Info */}
+                  <div className="md:col-span-3 flex flex-col justify-center">
+                    <div className="mb-6">
+                      <h3 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-2">
+                        {member.name}
+                      </h3>
+                      <p className="text-xl text-primary font-semibold mb-1">
+                        {member.title}
+                      </p>
+                      <p className="text-sm text-accent font-medium uppercase tracking-wider">
+                        {member.specialization}
+                      </p>
+                    </div>
+
+                    <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                      {member.description}
+                    </p>
+
+                    <div className="bg-slate-50 rounded-xl p-6 border border-slate-200/60">
+                      <div className="flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {member.additionalInfo}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <h3 className="font-display text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
-                {member.name}
-              </h3>
-              <p className="text-muted-foreground text-sm">
-                {member.role}
-              </p>
             </div>
           ))}
         </div>
