@@ -215,10 +215,12 @@ const WhatWeDoSection = () => {
             <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
               Industries We Serve
             </h3>
-            <p className="text-muted-foreground">Click on an industry to learn more</p>
+            <p className="text-muted-foreground hidden md:block">Click on an industry to learn more</p>
+            <p className="text-muted-foreground md:hidden">Tap on an industry to learn more</p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+          {/* Desktop Layout */}
+          <div className="hidden lg:grid lg:grid-cols-2 gap-8 items-center">
             {/* Industry Image Display */}
             <div className={`relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] ${industriesVisible ? 'scroll-fade-right' : 'scroll-hidden'}`}>
               {industries.map((industry, index) => (
@@ -267,7 +269,7 @@ const WhatWeDoSection = () => {
               </div>
             </div>
 
-            {/* Industry Selection Cards */}
+            {/* Industry Selection Cards - Desktop */}
             <div className={`space-y-3 ${industriesVisible ? 'scroll-fade-left' : 'scroll-hidden'}`}>
               {industries.map((industry, index) => (
                 <button
@@ -321,6 +323,94 @@ const WhatWeDoSection = () => {
                 </button>
               ))}
             </div>
+          </div>
+
+          {/* Mobile & Tablet Layout */}
+          <div className="lg:hidden space-y-4">
+            {industries.map((industry, index) => (
+              <div
+                key={index}
+                className={`rounded-2xl overflow-hidden border transition-all duration-300 ${
+                  activeIndustry === index
+                    ? 'border-primary shadow-lg'
+                    : 'border-slate-200'
+                }`}
+              >
+                {/* Clickable Header */}
+                <button
+                  onClick={() => setActiveIndustry(activeIndustry === index ? -1 : index)}
+                  className="w-full flex items-center gap-4 p-4 bg-white text-left"
+                >
+                  <div className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                    activeIndustry === index
+                      ? 'bg-primary text-white'
+                      : 'bg-gradient-to-br from-primary/10 to-accent/10'
+                  }`}>
+                    <industry.icon className={`w-6 h-6 transition-colors duration-300 ${
+                      activeIndustry === index ? 'text-white' : 'text-primary'
+                    }`} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h4 className={`font-display font-semibold transition-colors duration-300 ${
+                      activeIndustry === index ? 'text-primary' : 'text-foreground'
+                    }`}>
+                      {industry.name}
+                    </h4>
+                  </div>
+                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+                    activeIndustry === index ? 'bg-primary/10' : 'bg-slate-100'
+                  }`}>
+                    <svg 
+                      className={`w-5 h-5 transition-all duration-500 ${
+                        activeIndustry === index 
+                          ? 'text-primary rotate-90' 
+                          : 'text-muted-foreground'
+                      }`} 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </button>
+                
+                {/* Expandable Content */}
+                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                  activeIndustry === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}>
+                  <div className="relative">
+                    <img
+                      src={industry.image}
+                      alt={industry.name}
+                      className="w-full h-48 sm:h-56 object-cover"
+                    />
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                    {/* Description Overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                      <p className="text-white/95 text-sm leading-relaxed">{industry.description}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile Navigation Dots */}
+          <div className="flex justify-center gap-2 mt-6 lg:hidden">
+            {industries.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveIndustry(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  activeIndustry === index 
+                    ? 'bg-primary w-6' 
+                    : 'bg-slate-300 w-2 hover:bg-slate-400'
+                }`}
+                aria-label={`View ${industries[index].name}`}
+              />
+            ))}
           </div>
         </div>
 
