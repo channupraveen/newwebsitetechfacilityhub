@@ -8,7 +8,7 @@ const TeamSection = () => {
       name: "Godugu Venkatesh",
       role: "Founder & CEO",
       title: "Director & CEO",
-      description: "A visionary leader focused on transforming traditional facility management into smart, data-driven operations. With a strong understanding of on-ground challenges, he drives innovation that delivers real operational impact.",
+      description: "As the CEO and Director of TechFacilityHub, I lead the company's strategic direction and advisory initiatives. My focus is on driving digital innovation, shaping long-term vision, and transforming facility management into a smart, efficient, and automated ecosystem that delivers real value to clients.",
       specialization: "Advisory & Strategic Direction",
       additionalInfo: "Our advisory and strategic team guides TechFacilityHub with industry insights, technology expertise, and scalable growth strategies to ensure long-term value for our customers and partners.",
       image: "/venkatesh.jpeg",
