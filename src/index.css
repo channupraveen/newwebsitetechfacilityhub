@@ -825,6 +825,24 @@
   opacity: 0;
 }
 
+/* Ensure content is visible on mobile if animation doesn't trigger */
+@media (max-width: 768px) {
+  .scroll-hidden {
+    opacity: 1;
+  }
+  
+  .scroll-fade-up,
+  .scroll-fade-down,
+  .scroll-fade-left,
+  .scroll-fade-right,
+  .scroll-scale-up,
+  .scroll-blur-in {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
 .scroll-fade-up {
   animation: scroll-fade-up 0.7s ease-out forwards;
 }

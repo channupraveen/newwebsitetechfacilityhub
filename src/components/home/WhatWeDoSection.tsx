@@ -24,10 +24,10 @@ import {
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const WhatWeDoSection = () => {
-  const { ref: sectionRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
-  const { ref: solveRef, isVisible: solveVisible } = useScrollAnimation({ threshold: 0.2 });
-  const { ref: solutionRef, isVisible: solutionVisible } = useScrollAnimation({ threshold: 0.2 });
-  const { ref: industriesRef, isVisible: industriesVisible } = useScrollAnimation({ threshold: 0.2 });
+  const { ref: sectionRef, isVisible } = useScrollAnimation({ threshold: 0.05 });
+  const { ref: solveRef, isVisible: solveVisible } = useScrollAnimation({ threshold: 0.05 });
+  const { ref: solutionRef, isVisible: solutionVisible } = useScrollAnimation({ threshold: 0.05 });
+  const { ref: industriesRef, isVisible: industriesVisible } = useScrollAnimation({ threshold: 0.05 });
 
   const problemsWeSolve = [
     {
