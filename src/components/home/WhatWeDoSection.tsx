@@ -127,7 +127,7 @@ const WhatWeDoSection = () => {
     { 
       icon: Store, 
       name: "Malls & Commercial Complexes",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800",
+      image: "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&q=80&w=800",
       description: "Ensure seamless operations across retail spaces and common areas"
     },
   ];
