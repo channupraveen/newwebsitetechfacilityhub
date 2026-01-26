@@ -1,79 +1,70 @@
-import {
-  LayoutDashboard,
-  TicketCheck,
-  Box,
-  UserCog,
-  GitBranch,
-  Wallet,
-  Sparkles,
-  Shirt,
-  Activity,
-  FileSignature,
-  ShieldCheck,
-  PieChart,
+import { 
+  TicketCheck, 
+  Box, 
+  Sparkles, 
+  Shirt, 
+  FileSignature, 
+  ClipboardCheck,
+  Workflow,
+  Users,
+  BarChart3
 } from "lucide-react";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const features = [
   {
-    icon: LayoutDashboard,
-    title: "Dashboard",
-    description: "Live insights, KPIs, real-time monitoring",
-  },
-  {
     icon: TicketCheck,
-    title: "Ticketing",
-    description: "Track issues, assign technicians, auto-escalations",
+    title: "Ticket & Maintenance Management",
+    description: "Raise maintenance tickets in seconds. Auto-assign based on department & priority with SLA-based tracking and escalation.",
+    highlight: "Reduce downtime and improve response time",
   },
   {
     icon: Box,
-    title: "Asset Management",
-    description: "QR tagging, AMC, warranty, lifecycle management",
-  },
-  {
-    icon: UserCog,
-    title: "User Control",
-    description: "Permissions, roles, secure access",
-  },
-  {
-    icon: GitBranch,
-    title: "Workflow Automation",
-    description: "SOPs, checklists, approvals",
-  },
-  {
-    icon: Wallet,
-    title: "Finance",
-    description: "Billing, expenses, budget tracking",
+    title: "Asset Management System",
+    description: "Track biomedical & non-biomedical assets. Asset lifecycle, service history, preventive maintenance scheduling, warranty & AMC tracking.",
+    highlight: "Never lose track of critical equipment",
   },
   {
     icon: Sparkles,
-    title: "Housekeeping",
-    description: "Digital schedules, cleaning checklists, tracker",
+    title: "Housekeeping Management",
+    description: "Room & area-based housekeeping tasks. Shift scheduling, staff assignment, task completion tracking & performance reports.",
+    highlight: "Ensure hygiene compliance",
   },
   {
     icon: Shirt,
-    title: "Laundry",
-    description: "Load management, wash cycles, delivery tracking",
-  },
-  {
-    icon: Activity,
-    title: "Utilities & Meters",
-    description: "Digital readings, consumption analytics",
+    title: "Laundry Management",
+    description: "Linen tracking by department & location. Issue, return, loss tracking with usage reports & cost control.",
+    highlight: "Control losses & improve linen lifecycle",
   },
   {
     icon: FileSignature,
-    title: "Contract & Vendor",
-    description: "SLA monitoring, vendor scorecards",
+    title: "Vendor, AMC & Contract Management",
+    description: "Manage vendors, AMCs & CMCs. Track contract validity, renewal dates, vendor performance & SLA compliance.",
+    highlight: "Stay compliant, avoid missed renewals",
   },
   {
-    icon: ShieldCheck,
-    title: "Compliance & Audit",
-    description: "Digital inspections, forms, assessments",
+    icon: ClipboardCheck,
+    title: "Checklist & Compliance",
+    description: "Digital inspection & audit checklists. NABH-ready compliance structure with photo & comment-based verification.",
+    highlight: "Simplify audits & regulatory compliance",
   },
   {
-    icon: PieChart,
-    title: "Reports",
-    description: "Automated MIS, trends, analytics",
+    icon: Workflow,
+    title: "Workflow Automation",
+    description: "Rule-based workflows with department-specific approvals. Automated escalations to reduce manual coordination.",
+    highlight: "Replace WhatsApp & Excel with automation",
+  },
+  {
+    icon: Users,
+    title: "Role-Based User Management",
+    description: "Super Admin, Hospital Admin, Department Heads, Technicians & Staff. Controlled permissions & visibility for every role.",
+    highlight: "Every role sees only what they need",
+  },
+  {
+    icon: BarChart3,
+    title: "Dashboards & Reports",
+    description: "SLA performance reports, ticket & asset analytics, department-wise insights with management dashboards.",
+    highlight: "Make data-driven decisions effortlessly",
   },
 ];
 
@@ -81,36 +72,45 @@ const FeaturesSection = () => {
   const { ref: sectionRef, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
   return (
-    <section className="py-20 lg:py-28 bg-secondary/50" ref={sectionRef}>
+    <section className="py-20 lg:py-28 bg-white" ref={sectionRef} id="features">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className={`max-w-3xl mx-auto text-center mb-16 ${isVisible ? 'scroll-fade-up' : 'scroll-hidden'}`}>
+          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+            Core Modules
+          </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Our Modules
+            Powerful Modules For Complete<br />Facility Management
           </h2>
           <p className="text-lg text-muted-foreground">
-            Everything you need to manage facility operations in one platform
+            From maintenance tickets to compliance checklists, TechFacilityHub brings everything into one powerful dashboard.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className={`group p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/20 hover:shadow-xl transition-all duration-300 card-hover-lift ${
-                isVisible ? `scroll-blur-in stagger-${index + 1}` : 'scroll-hidden'
+              className={`group p-6 rounded-2xl bg-gradient-to-b from-gray-50/80 to-white border border-border/50 hover:border-primary/30 hover:shadow-xl transition-all duration-500 hover:-translate-y-1 ${
+                isVisible ? `scroll-blur-in stagger-${Math.min(index + 1, 9)}` : 'scroll-hidden'
               }`}
             >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-accent/20 transition-all duration-300">
-                <feature.icon className="w-6 h-6 text-primary hover-pop" />
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:shadow-lg transition-all duration-300">
+                  <feature.icon className="w-6 h-6 text-primary group-hover:text-white transition-colors" />
+                </div>
+                <h3 className="font-display font-semibold text-lg text-foreground">
+                  {feature.title}
+                </h3>
               </div>
-              <h3 className="font-display font-semibold text-lg text-foreground mb-2">
-                {feature.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                 {feature.description}
               </p>
+              <div className="flex items-center gap-2 text-xs font-medium text-primary">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                {feature.highlight}
+              </div>
             </div>
           ))}
         </div>
