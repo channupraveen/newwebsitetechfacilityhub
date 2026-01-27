@@ -4,7 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import emailjs from "@emailjs/browser";
+
+// EmailJS Configuration
+const EMAILJS_SERVICE_ID = "service_x46gub6";
+const EMAILJS_TEMPLATE_ID = "template_82hhcad";
+const EMAILJS_PUBLIC_KEY = "NamB_cfN8YqttEVLH";
 
 const contactInfo = [
   {
@@ -16,8 +22,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    content: " techfacilityhub@gmail.com",
-    href: "mailto: techfacilityhub@gmail.com",
+    content: "techfacilityhub@gmail.com",
+    href: "mailto:techfacilityhub@gmail.com",
   },
   {
     icon: MapPin,
@@ -34,6 +40,7 @@ const contactInfo = [
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -52,22 +59,44 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.mobile,
+          company: formData.organization,
+          message: formData.message,
+          to_email: "techfacilityhub@gmail.com",
+        },
+        EMAILJS_PUBLIC_KEY
+      );
 
-    toast({
-      title: "Enquiry Submitted!",
-      description: "We'll get back to you within 24 hours.",
-    });
+      setIsSubmitted(true);
+      toast({
+        title: "Message Sent Successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
 
-    setFormData({
-      name: "",
-      email: "",
-      mobile: "",
-      organization: "",
-      message: "",
-    });
-    setIsSubmitting(false);
+      setFormData({
+        name: "",
+        email: "",
+        mobile: "",
+        organization: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -148,113 +177,138 @@ const Contact = () => {
               {/* Contact Form */}
               <div>
                 <div className="p-8 rounded-3xl bg-card border border-border shadow-card">
-                  <h2 className="font-display text-2xl font-bold text-foreground mb-6">
-                    Send Us a Message
-                  </h2>
-                  <form onSubmit={handleSubmit} className="space-y-5">
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="block text-sm font-medium text-foreground mb-2"
+                  {isSubmitted ? (
+                    <div className="text-center py-12">
+                      <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <CheckCircle className="w-10 h-10 text-emerald-600" />
+                      </div>
+                      <h3 className="font-display text-2xl font-bold text-foreground mb-3">
+                        Message Sent!
+                      </h3>
+                      <p className="text-muted-foreground mb-6">
+                        Thank you for reaching out. We'll get back to you within 24 hours.
+                      </p>
+                      <Button
+                        variant="outline"
+                        onClick={() => setIsSubmitted(false)}
                       >
-                        Name *
-                      </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Your full name"
-                        required
-                        className="h-12"
-                      />
+                        Send Another Message
+                      </Button>
                     </div>
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-foreground mb-2"
-                      >
-                        Email *
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="your@email.com"
-                        required
-                        className="h-12"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="mobile"
-                        className="block text-sm font-medium text-foreground mb-2"
-                      >
-                        Mobile Number
-                      </label>
-                      <Input
-                        id="mobile"
-                        name="mobile"
-                        type="tel"
-                        value={formData.mobile}
-                        onChange={handleChange}
-                        placeholder="+91 XXXXX XXXXX"
-                        className="h-12"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="organization"
-                        className="block text-sm font-medium text-foreground mb-2"
-                      >
-                        Organization
-                      </label>
-                      <Input
-                        id="organization"
-                        name="organization"
-                        value={formData.organization}
-                        onChange={handleChange}
-                        placeholder="Your company name"
-                        className="h-12"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="message"
-                        className="block text-sm font-medium text-foreground mb-2"
-                      >
-                        Message *
-                      </label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="How can we help you?"
-                        required
-                        rows={4}
-                        className="resize-none"
-                      />
-                    </div>
-                    <Button
-                      type="submit"
-                      variant="hero"
-                      size="lg"
-                      className="w-full"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? (
-                        "Submitting..."
-                      ) : (
-                        <>
-                          Submit Enquiry
-                          <Send className="w-5 h-5" />
-                        </>
-                      )}
-                    </Button>
-                  </form>
+                  ) : (
+                    <>
+                      <h2 className="font-display text-2xl font-bold text-foreground mb-6">
+                        Send Us a Message
+                      </h2>
+                      <form onSubmit={handleSubmit} className="space-y-5">
+                        <div>
+                          <label
+                            htmlFor="name"
+                            className="block text-sm font-medium text-foreground mb-2"
+                          >
+                            Name *
+                          </label>
+                          <Input
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            placeholder="Your full name"
+                            required
+                            className="h-12"
+                          />
+                        </div>
+                        <div>
+                          <label
+                            htmlFor="email"
+                            className="block text-sm font-medium text-foreground mb-2"
+                          >
+                            Email *
+                          </label>
+                          <Input
+                            id="email"
+                            name="email"
+                            type="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            placeholder="your@email.com"
+                            required
+                            className="h-12"
+                          />
+                        </div>
+                        <div>
+                          <label
+                            htmlFor="mobile"
+                            className="block text-sm font-medium text-foreground mb-2"
+                          >
+                            Mobile Number
+                          </label>
+                          <Input
+                            id="mobile"
+                            name="mobile"
+                            type="tel"
+                            value={formData.mobile}
+                            onChange={handleChange}
+                            placeholder="+91 XXXXX XXXXX"
+                            className="h-12"
+                          />
+                        </div>
+                        <div>
+                          <label
+                            htmlFor="organization"
+                            className="block text-sm font-medium text-foreground mb-2"
+                          >
+                            Organization
+                          </label>
+                          <Input
+                            id="organization"
+                            name="organization"
+                            value={formData.organization}
+                            onChange={handleChange}
+                            placeholder="Your company name"
+                            className="h-12"
+                          />
+                        </div>
+                        <div>
+                          <label
+                            htmlFor="message"
+                            className="block text-sm font-medium text-foreground mb-2"
+                          >
+                            Message *
+                          </label>
+                          <Textarea
+                            id="message"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            placeholder="How can we help you?"
+                            required
+                            rows={4}
+                            className="resize-none"
+                          />
+                        </div>
+                        <Button
+                          type="submit"
+                          variant="hero"
+                          size="lg"
+                          className="w-full"
+                          disabled={isSubmitting}
+                        >
+                          {isSubmitting ? (
+                            <>
+                              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
+                              Sending...
+                            </>
+                          ) : (
+                            <>
+                              Submit Enquiry
+                              <Send className="w-5 h-5 ml-2" />
+                            </>
+                          )}
+                        </Button>
+                      </form>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
