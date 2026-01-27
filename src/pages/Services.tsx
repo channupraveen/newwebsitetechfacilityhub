@@ -2,15 +2,6 @@ import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
-  Wrench,
-  Package,
-  SprayCan,
-  WashingMachine,
-  Workflow,
-  Gauge,
-  ClipboardCheck,
-  FileText,
-  CreditCard,
   ArrowRight,
   CheckCircle,
 } from "lucide-react";
@@ -18,18 +9,18 @@ import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const services = [
   {
-    icon: Wrench,
-    title: "Maintenance & Technician Management",
+    title: "Maintenance & Ticket Management",
     description:
       "Comprehensive work order management with real-time technician tracking and automatic escalations.",
     features: [
       "Work orders, breakdowns & preventive maintenance",
       "Technician tracking with time stamps",
       "Automatic escalations & service history",
+      "SLA tracking & performance reports",
     ],
+    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=800",
   },
   {
-    icon: Package,
     title: "Asset Management",
     description:
       "Complete lifecycle tracking with QR code tagging and performance analytics.",
@@ -39,20 +30,21 @@ const services = [
       "QR code tagging",
       "Asset performance analytics",
     ],
+    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800",
   },
   {
-    icon: SprayCan,
-    title: "Housekeeping Digitization",
+    title: "Housekeeping Management",
     description:
       "Digital task scheduling and cleaning checklist automation with area-wise tracking.",
     features: [
       "Task scheduling & attendance monitoring",
       "Cleaning checklist automation",
       "Area-wise performance tracking",
+      "Staff performance reports",
     ],
+    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=800",
   },
   {
-    icon: WashingMachine,
     title: "Laundry Management",
     description:
       "End-to-end linen tracking with wash cycle management and delivery scheduling.",
@@ -60,10 +52,24 @@ const services = [
       "Linen tracking across hospital/hotel units",
       "Wash cycles, load tracking & billing",
       "Inventory & delivery management",
+      "Loss tracking & cost control",
     ],
+    image: "https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&q=80&w=800",
   },
   {
-    icon: Workflow,
+    title: "NABH Compliance & Checklists",
+    description:
+      "Complete NABH accreditation support with digital checklists, audits, and compliance tracking for hospitals.",
+    features: [
+      "NABH standard checklists & documentation",
+      "Pre-assessment & mock audit support",
+      "Facility Management Entry Level (FMEL) compliance",
+      "Biomedical equipment safety checklists",
+      "Infection control & safety audits",
+    ],
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800",
+  },
+  {
     title: "Workflow & SOP Automation",
     description:
       "Create custom digital workflows with automated reminders and approval processes.",
@@ -71,50 +77,57 @@ const services = [
       "Create custom digital workflows",
       "Auto-reminders, approvals, notifications",
       "Zero manual dependency",
+      "Department-specific approvals",
     ],
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
   },
   {
-    icon: Gauge,
-    title: "Utilities & Metering",
-    description:
-      "Digital meter readings with consumption analysis and energy efficiency insights.",
-    features: [
-      "Digital meter readings",
-      "Consumption analysis",
-      "Energy efficiency insights",
-    ],
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Compliance & Audit Management",
-    description:
-      "Safety audits, inspections, and compliance forms with automated reporting.",
-    features: [
-      "Safety audits, inspections, and compliance forms",
-      "Automated reports & corrective actions",
-      "Easy tracking of regulatory standards",
-    ],
-  },
-  {
-    icon: FileText,
-    title: "Vendor & Contract Management",
+    title: "Vendor & AMC Management",
     description:
       "Vendor onboarding with SLA tracking and performance rating systems.",
     features: [
       "Vendor onboarding & SLA tracking",
-      "Contract renewals, alerts & performance rating",
+      "Contract renewals & alerts",
+      "Performance rating system",
+      "AMC & CMC management",
     ],
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
   },
   {
-    icon: CreditCard,
-    title: "Finance & Billing",
+    title: "Compliance & Audit Management",
     description:
-      "Comprehensive expense tracking with budget allocation and automated financial reports.",
+      "Safety audits, inspections, and compliance forms with automated reporting.",
     features: [
-      "Expense tracking",
-      "Budget allocation",
-      "Auto-generated financial reports",
+      "Safety audits & inspections",
+      "Fire safety compliance checklists",
+      "Automated reports & corrective actions",
+      "Regulatory standards tracking",
     ],
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    title: "User & Role Management",
+    description:
+      "Complete role-based access control with permissions for every user type.",
+    features: [
+      "Super Admin, Hospital Admin roles",
+      "Department Heads & Technicians",
+      "Controlled permissions & visibility",
+      "Activity logs & audit trails",
+    ],
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    title: "Dashboards & Reports",
+    description:
+      "Comprehensive analytics with SLA performance reports and department-wise insights.",
+    features: [
+      "SLA performance reports",
+      "Ticket & asset analytics",
+      "Department-wise insights",
+      "Management dashboards",
+    ],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
   },
 ];
 
@@ -160,67 +173,31 @@ const Services = () => {
       {/* Services Grid */}
       <section ref={servicesRef} className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="space-y-16">
+          <div className="space-y-20">
             {services.map((service, index) => (
               <div
                 key={service.title}
-                className={`flex flex-col lg:flex-row gap-8 lg:gap-16 items-center ${
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 items-center ${
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 } ${servicesVisible ? `scroll-fade-up stagger-${(index % 6) + 1}` : 'scroll-hidden'}`}
               >
-                {/* Animated Icon Card */}
-                <div className="lg:w-1/3">
-                  <div className="group relative">
-                    {/* Main card with subtle background */}
-                    <div className="relative p-8 rounded-3xl bg-gradient-to-br from-slate-50 to-white shadow-lg overflow-hidden transition-all duration-500 group-hover:shadow-2xl border border-slate-200/50">
-                      {/* Animated background gradient circles */}
-                      <div className="absolute inset-0 opacity-40">
-                        <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-3xl animate-pulse-gentle" />
-                        <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-to-br from-accent/15 to-primary/15 rounded-full blur-3xl animate-pulse-gentle-delayed" />
-                      </div>
-                      
-                      {/* Icon container */}
-                      <div className="relative flex items-center justify-center">
-                        {/* Glowing background circle */}
-                        <div className="absolute w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-xl animate-pulse-gentle"></div>
-                        
-                        {/* Icon circle with gradient border */}
-                        <div className="relative w-28 h-28 rounded-full bg-white shadow-xl flex items-center justify-center group-hover:scale-110 transition-all duration-500 border-4 border-transparent bg-clip-padding">
-                          {/* Gradient border effect */}
-                          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-accent to-primary opacity-100 -z-10 blur-sm"></div>
-                          
-                          {/* Icon with gradient color */}
-                          <div className="relative">
-                            <service.icon 
-                              className="w-14 h-14 animate-float" 
-                              strokeWidth={1.5}
-                              style={{
-                                stroke: 'url(#iconGradient)',
-                                fill: 'none'
-                              }}
-                            />
-                            {/* SVG gradient definition */}
-                            <svg width="0" height="0" className="absolute">
-                              <defs>
-                                <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                  <stop offset="0%" style={{ stopColor: 'hsl(220, 70%, 25%)', stopOpacity: 1 }} />
-                                  <stop offset="100%" style={{ stopColor: 'hsl(175, 70%, 40%)', stopOpacity: 1 }} />
-                                </linearGradient>
-                              </defs>
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {/* Decorative elements */}
-                      <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-accent animate-ping-gentle opacity-50"></div>
-                      <div className="absolute bottom-6 left-6 w-1.5 h-1.5 rounded-full bg-primary animate-ping-gentle opacity-50" style={{ animationDelay: '1s' }}></div>
+                {/* Image */}
+                <div className="lg:w-1/2">
+                  <div className="relative group">
+                    <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-72 lg:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="lg:w-2/3">
+                <div className="lg:w-1/2">
                   <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
                     {service.title}
                   </h2>
@@ -233,7 +210,7 @@ const Services = () => {
                         key={feature}
                         className="flex items-start gap-3 text-foreground"
                       >
-                        <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                        <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
                         <span>{feature}</span>
                       </li>
                     ))}

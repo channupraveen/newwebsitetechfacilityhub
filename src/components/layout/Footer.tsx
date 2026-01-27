@@ -2,6 +2,14 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Twitter, Linkedin, Youtube } from "lucide-react";
 
 const Footer = () => {
+  // Scroll to section function
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="bg-[#0f0f1a] text-white">
       <div className="container mx-auto px-4 lg:px-8 py-16">
@@ -40,19 +48,20 @@ const Footer = () => {
             <h4 className="font-display font-semibold text-white mb-4">Modules</h4>
             <ul className="space-y-3">
               {[
-                "Ticket Management",
-                "Asset Management",
-                "Housekeeping",
-                "Laundry Management",
-                "Vendor & AMC",
-                "Compliance",
+                { label: "Ticket Management", section: "features" },
+                { label: "Asset Management", section: "features" },
+                { label: "Housekeeping", section: "features" },
+                { label: "Laundry Management", section: "features" },
+                { label: "Vendor & AMC", section: "features" },
+                { label: "Compliance", section: "features" },
               ].map((item) => (
-                <li key={item}>
+                <li key={item.label}>
                   <Link
-                    to="/services"
-                    className="text-gray-400 hover:text-violet-400 transition-colors text-sm"
+                    to="/"
+                    onClick={() => setTimeout(() => scrollToSection(item.section), 100)}
+                    className="text-gray-400 hover:text-violet-400 transition-colors text-sm cursor-pointer"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -64,15 +73,16 @@ const Footer = () => {
             <h4 className="font-display font-semibold text-white mb-4">Company</h4>
             <ul className="space-y-3">
               {[
-                { label: "About Us", href: "/about" },
-                { label: "Services", href: "/services" },
-                { label: "Pricing", href: "/#pricing" },
-                { label: "Contact", href: "/contact" },
-                { label: "Request Demo", href: "/contact" },
+                { label: "About Us", href: "/about", section: null },
+                { label: "Services", href: "/services", section: null },
+                { label: "Industries", href: "/", section: "industries" },
+                { label: "Contact", href: "/contact", section: null },
+                { label: "Request Demo", href: "/contact", section: null },
               ].map((item) => (
                 <li key={item.label}>
                   <Link
                     to={item.href}
+                    onClick={() => item.section && setTimeout(() => scrollToSection(item.section), 100)}
                     className="text-gray-400 hover:text-violet-400 transition-colors text-sm"
                   >
                     {item.label}
