@@ -25,30 +25,6 @@ const testimonials = [
     avatar: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=100&h=100&fit=crop&crop=face",
     rating: 5,
   },
-  {
-    quote: "Asset tracking was our biggest pain point. TechFacilityHub helped us manage 500+ biomedical assets effortlessly.",
-    name: "Amit Patel",
-    role: "Biomedical Engineer",
-    hospital: "Fortis Hospital, Delhi",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-    rating: 5,
-  },
-  {
-    quote: "The vendor and AMC management feature ensures we never miss a renewal. It's saved us from compliance issues multiple times.",
-    name: "Lakshmi Menon",
-    role: "Operations Head",
-    hospital: "KIMS Hospital, Kerala",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=face",
-    rating: 5,
-  },
-  {
-    quote: "Switching from Excel and WhatsApp to TechFacilityHub was the best decision. Our team coordination has improved 10x.",
-    name: "Suresh Reddy",
-    role: "Chief Engineer",
-    hospital: "Yashoda Hospitals, Hyderabad",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-    rating: 5,
-  },
 ];
 
 const TestimonialsSection = () => {
@@ -63,20 +39,20 @@ const TestimonialsSection = () => {
             Testimonials
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Trusted by Healthcare<br />Facilities Across India
+            Trusted by Facilities<br />Across India
           </h2>
           <p className="text-lg text-muted-foreground">
-            See how TechFacilityHub is helping hospitals improve their facility operations.
+            See how TechFacilityHub is helping organizations improve their facility operations.
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {/* Testimonials Grid - 3 Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
               className={`bg-white border border-border/50 rounded-2xl p-6 hover:border-primary/30 hover:shadow-xl transition-all duration-500 ${
-                isVisible ? `scroll-blur-in stagger-${Math.min(index + 1, 6)}` : 'scroll-hidden'
+                isVisible ? `scroll-blur-in stagger-${index + 1}` : 'scroll-hidden'
               }`}
             >
               {/* Rating Stars */}

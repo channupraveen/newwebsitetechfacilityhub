@@ -13,22 +13,22 @@ import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const features = [
   {
-    icon: TicketCheck,
-    title: "Ticket & Maintenance Management",
-    description: "Raise maintenance tickets in seconds. Auto-assign based on department & priority with SLA-based tracking and escalation.",
-    highlight: "Reduce downtime and improve response time",
+    icon: Box,
+    title: "Asset Management",
+    description: "Track asset lifecycle, maintenance history, warranty, and downtime to reduce breakdowns and extend asset life.",
+    highlight: "Never lose track of critical equipment",
   },
   {
-    icon: Box,
-    title: "Asset Management System",
-    description: "Track biomedical & non-biomedical assets. Asset lifecycle, service history, preventive maintenance scheduling, warranty & AMC tracking.",
-    highlight: "Never lose track of critical equipment",
+    icon: TicketCheck,
+    title: "Maintenance & Ticket Management",
+    description: "Log issues instantly, assign tasks, track SLA, and ensure faster resolution with full transparency.",
+    highlight: "Reduce downtime and improve response time",
   },
   {
     icon: Sparkles,
     title: "Housekeeping Management",
-    description: "Room & area-based housekeeping tasks. Shift scheduling, staff assignment, task completion tracking & performance reports.",
-    highlight: "Ensure hygiene compliance",
+    description: "Schedule cleaning tasks, track staff performance, and maintain hygiene standards across rooms, wards, and common areas.",
+    highlight: "Ensure hygiene compliance across all areas",
   },
   {
     icon: Shirt,
@@ -44,8 +44,8 @@ const features = [
   },
   {
     icon: ClipboardCheck,
-    title: "Checklist & Compliance",
-    description: "Digital inspection & audit checklists. NABH-ready compliance structure with photo & comment-based verification.",
+    title: "Audit & Compliance Checklists",
+    description: "Digitize inspections, maintain records, and stay compliant with industry and safety standards like NABH.",
     highlight: "Simplify audits & regulatory compliance",
   },
   {
@@ -83,7 +83,7 @@ const FeaturesSection = () => {
             Powerful Modules For Complete<br />Facility Management
           </h2>
           <p className="text-lg text-muted-foreground">
-            From maintenance tickets to compliance checklists, TechFacilityHub brings everything into one powerful dashboard.
+            From maintenance tickets to compliance checklists, TechFacilityHub brings everything into one powerful dashboard — designed for hospitals, hotels, resorts, malls, and large facilities.
           </p>
         </div>
 

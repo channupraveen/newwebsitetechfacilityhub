@@ -1,25 +1,42 @@
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/home/HeroSection";
-import PartnersSection from "@/components/home/PartnersSection";
-import WhatWeDoSection from "@/components/home/WhatWeDoSection";
+import ProblemsAndIndustriesSection from "@/components/home/ProblemsAndIndustriesSection";
 import FeaturesSection from "@/components/home/FeaturesSection";
-import PricingSection from "@/components/home/PricingSection";
+import IndustryUseCasesSection from "@/components/home/IndustryUseCasesSection";
+import WhyChooseSection from "@/components/home/WhyChooseSection";
+import TrustSection from "@/components/home/TrustSection";
 import FAQSection from "@/components/home/FAQSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
-import TeamSection from "@/components/home/TeamSection";
 import CTASection from "@/components/home/CTASection";
 
 const Index = () => {
   return (
     <Layout>
+      {/* 1. Hero Section - Clear headline, subheadline, CTA */}
       <HeroSection />
-      <PartnersSection />
-      <WhatWeDoSection />
+      
+      {/* 2. Who Is This For + Problems We Solve + Solution Overview */}
+      <ProblemsAndIndustriesSection />
+      
+      {/* 3. Features/Modules Section */}
       <FeaturesSection />
-      <PricingSection />
+      
+      {/* 4. Industry Use Cases */}
+      <IndustryUseCasesSection />
+      
+      {/* 5. Why Choose Us */}
+      <WhyChooseSection />
+      
+      {/* 6. Trust Signals */}
+      <TrustSection />
+      
+      {/* 7. Testimonials */}
       <TestimonialsSection />
+      
+      {/* 8. FAQ */}
       <FAQSection />
-      <TeamSection />
+      
+      {/* 9. Final CTA */}
       <CTASection />
     </Layout>
   );

@@ -7,17 +7,17 @@ const CTASection = () => {
   const { ref: sectionRef, isVisible } = useScrollAnimation({ threshold: 0.3 });
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-white to-purple-50" ref={sectionRef}>
+    <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-white to-purple-50" ref={sectionRef} id="contact">
       <div className="container mx-auto px-4 lg:px-8">
         <div className={`max-w-3xl mx-auto text-center ${isVisible ? 'scroll-blur-in' : 'scroll-hidden'}`}>
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
             Get Started Today
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Ready to Digitize Your<br />Facility Operations?
+            Ready to Simplify<br />Facility Operations?
           </h2>
           <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Join growing healthcare facilities across India who trust TechFacilityHub to streamline their operations, improve compliance, and deliver better patient experiences.
+            See how TechFacilityHub fits your hospital, hotel, resort, or mall. Join growing facilities across India who trust TechFacilityHub to streamline their operations, improve compliance, and deliver better experiences.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
             <Link to="/contact">

@@ -5,31 +5,35 @@ import useScrollAnimation from "@/hooks/useScrollAnimation";
 const faqs = [
   {
     question: "What is TechFacilityHub?",
-    answer: "TechFacilityHub is a modern facility management SaaS platform designed to help hospitals and large facilities manage non-clinical operations efficiently. It includes modules for maintenance tickets, housekeeping, asset tracking, vendor management, compliance checklists, and more.",
+    answer: "TechFacilityHub is a cloud-based facility management software designed for hospitals, hotels, resorts, malls, and large facilities. It helps manage assets, housekeeping, maintenance tickets, vendor contracts, compliance checklists, and operations from one unified dashboard.",
+  },
+  {
+    question: "Which industries can use TechFacilityHub?",
+    answer: "TechFacilityHub is built for hospitals & healthcare, hotels & resorts, shopping malls, corporate campuses, and educational institutions. Our platform adapts to the unique facility management needs of each industry with customizable workflows.",
   },
   {
     question: "Is TechFacilityHub suitable for hospitals in India?",
-    answer: "Yes! TechFacilityHub is built specifically for Indian hospitals and enterprises. It includes NABH-ready compliance structures, supports Indian currency and tax requirements, and is priced affordably for the Indian healthcare market.",
+    answer: "Yes! TechFacilityHub is built specifically for Indian hospitals and enterprises. It includes NABH-ready compliance structures, biomedical asset tracking, equipment uptime monitoring, and is priced affordably for the Indian healthcare market.",
+  },
+  {
+    question: "Can hotels and resorts use TechFacilityHub?",
+    answer: "Absolutely! Hotels and resorts can use TechFacilityHub for room maintenance tracking, housekeeping scheduling, guest complaint resolution with SLA tracking, HVAC maintenance, and vendor coordination.",
   },
   {
     question: "Do I need coding skills to use TechFacilityHub?",
-    answer: "Not at all. TechFacilityHub is designed for non-technical users. The platform features an intuitive interface that hospital staff, administrators, and technicians can use without any coding knowledge.",
+    answer: "Not at all. TechFacilityHub is designed for non-technical users. The platform features an intuitive interface that facility staff, administrators, and technicians can use without any coding knowledge.",
   },
   {
     question: "How secure is the platform?",
-    answer: "TechFacilityHub is a cloud-hosted SaaS platform with secure authentication, role-based access control, and data encryption. We follow industry best practices for healthcare data security and privacy.",
+    answer: "TechFacilityHub is a cloud-hosted SaaS platform with secure authentication, role-based access control, and data encryption. We follow industry best practices for data security and privacy.",
   },
   {
-    question: "Can TechFacilityHub handle multiple hospital locations?",
-    answer: "Yes! Our Enterprise plan supports multi-facility management. You can manage multiple hospitals or locations from a single dashboard with location-specific permissions, reports, and workflows.",
+    question: "Can TechFacilityHub handle multiple locations?",
+    answer: "Yes! Our platform supports multi-location facility management. You can manage multiple hospitals, hotels, or facilities from a single dashboard with location-specific permissions, reports, and workflows.",
   },
   {
-    question: "What kind of support do you provide?",
-    answer: "We offer email support for Starter plans, priority support for Professional plans, and 24/7 premium support with a dedicated account manager for Enterprise customers. We also provide onboarding assistance and training.",
-  },
-  {
-    question: "Is there a free trial available?",
-    answer: "Yes, we offer a free Starter plan to help you explore the platform. You can also request a personalized demo to see how TechFacilityHub can work for your specific facility needs.",
+    question: "Is there a free demo available?",
+    answer: "Yes! We offer a free demo to help you explore the platform. Contact us to schedule a personalized demo to see how TechFacilityHub can work for your specific hospital, hotel, resort, or mall facility needs.",
   },
 ];
 
@@ -49,7 +53,7 @@ const FAQSection = () => {
             Frequently Asked<br />Questions
           </h2>
           <p className="text-lg text-muted-foreground">
-            Everything you need to know about TechFacilityHub
+            Everything you need to know about TechFacilityHub facility management software
           </p>
         </div>
 
@@ -59,7 +63,7 @@ const FAQSection = () => {
             <div
               key={index}
               className={`border-b border-border last:border-0 ${
-                isVisible ? `scroll-fade-up stagger-${Math.min(index + 1, 7)}` : 'scroll-hidden'
+                isVisible ? `scroll-fade-up stagger-${Math.min(index + 1, 8)}` : 'scroll-hidden'
               }`}
             >
               <button

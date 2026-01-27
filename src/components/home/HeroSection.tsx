@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Play, Search, Grid3X3, List, Calendar, Users, Shield, Cloud, Smartphone, Lock } from "lucide-react";
+import { Play, Search, Grid3X3, List, Calendar, Users, Shield, Cloud, Smartphone, Lock, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const HeroSection = () => {
@@ -49,26 +49,24 @@ const HeroSection = () => {
         <div className="max-w-7xl mx-auto">
           {/* Hero Content */}
           <div className="text-center pt-12 pb-8 lg:pt-16 lg:pb-10">
-            {/* Headline */}
+            {/* Main Headline - SEO Optimized H1 */}
             <h1 
               className={`font-display text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-foreground leading-[1.15] mb-6 tracking-tight transition-all duration-700 ${
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <span className="inline-block">All-in-One </span>
-              <span className="gradient-text"> Facility Management</span>
+              <span className="gradient-text">Facility Management Software</span>
               <br />
-              <span className="inline-block">Software for </span>
-              <span className="gradient-text"> Modern Enterprises</span>
+              <span className="inline-block">for Modern Enterprises</span>
             </h1>
 
-            {/* Subheadline */}
+            {/* Subheadline - Clear Value Proposition */}
             <p 
               className={`text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto mb-6 transition-all duration-700 delay-200 ${
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              Manage maintenance, assets, vendors, housekeeping, and workflows in one powerful cloud-based SaaS platform — built for offices, factories, hospitals, hotels, campuses, and commercial facilities.
+              Track assets, manage housekeeping, handle maintenance tickets, ensure compliance, and monitor operations for hospitals, hotels, resorts, malls, and commercial buildings — all from one powerful dashboard.
             </p>
 
             {/* Trust Indicators */}
@@ -79,7 +77,7 @@ const HeroSection = () => {
             >
               {[
                 { icon: Cloud, text: "Cloud-based SaaS" },
-                { icon: Shield, text: "Multi-location & Multi-industry" },
+                { icon: Shield, text: "Multi-location Ready" },
                 { icon: Lock, text: "Role-based Access" },
                 { icon: Smartphone, text: "Fast Setup & Scalable" },
               ].map((item, i) => (
@@ -96,10 +94,10 @@ const HeroSection = () => {
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              One Platform. Total Facility Control.
+              One Platform. Complete Facility Control.
             </p>
 
-            {/* CTAs */}
+            {/* CTAs - Demo Focused */}
             <div 
               className={`flex flex-col sm:flex-row items-center justify-center gap-3 transition-all duration-700 delay-400 ${
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -109,9 +107,12 @@ const HeroSection = () => {
                 <Button 
                   variant="default" 
                   size="lg" 
-                  className="rounded-full px-7 h-12 text-sm font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 bg-[#1e1b4b] hover:bg-[#312e81] group relative overflow-hidden"
+                  className="rounded-full px-8 h-14 text-base font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 bg-[#1e1b4b] hover:bg-[#312e81] group relative overflow-hidden"
                 >
-                  <span className="relative z-10">Request a Demo</span>
+                  <span className="relative z-10 flex items-center gap-2">
+                    Book Free Demo
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </Button>
               </Link>
@@ -119,7 +120,7 @@ const HeroSection = () => {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="rounded-full px-7 h-12 text-sm font-semibold border border-gray-300 bg-white hover:bg-gray-50 transition-all duration-300 group text-foreground hover:border-violet-300 hover:shadow-lg"
+                  className="rounded-full px-7 h-14 text-base font-semibold border border-gray-300 bg-white hover:bg-gray-50 transition-all duration-300 group text-foreground hover:border-violet-300 hover:shadow-lg"
                 >
                   <Play className="w-4 h-4 mr-2 group-hover:scale-125 group-hover:text-violet-600 transition-all duration-300" />
                   Start Free Trial
