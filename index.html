@@ -180,6 +180,75 @@
     }
     </script>
     
+    <!-- Structured Data - SiteNavigationElement for Sitelinks -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SiteNavigationElement",
+      "name": "Main Navigation",
+      "hasPart": [
+        {
+          "@type": "WebPage",
+          "name": "Home",
+          "description": "TechFacilityHub - Complete Hospital Facility Management Software",
+          "url": "https://www.techfacilityhub.com/"
+        },
+        {
+          "@type": "WebPage",
+          "name": "About Us",
+          "description": "Learn about TechFacilityHub team and mission",
+          "url": "https://www.techfacilityhub.com/about"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Services",
+          "description": "Facility management services and features",
+          "url": "https://www.techfacilityhub.com/services"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Contact",
+          "description": "Get in touch for a free demo",
+          "url": "https://www.techfacilityhub.com/contact"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data - BreadcrumbList for Sitelinks -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.techfacilityhub.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About Us",
+          "item": "https://www.techfacilityhub.com/about"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Services",
+          "item": "https://www.techfacilityhub.com/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Contact",
+          "item": "https://www.techfacilityhub.com/contact"
+        }
+      ]
+    }
+    </script>
+    
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
