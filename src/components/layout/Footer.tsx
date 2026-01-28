@@ -18,7 +18,7 @@ const Footer = () => {
           <div className="lg:col-span-2 space-y-6">
             <Link to="/" className="flex items-center gap-2">
               <img 
-                src="/TF HUB LOGO.png" 
+                src="/logo.png" 
                 alt="TechFacilityHub Logo" 
                 className="w-10 h-10 object-contain"
               />

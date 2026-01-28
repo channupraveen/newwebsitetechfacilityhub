@@ -5,6 +5,7 @@ import FeaturesSection from "@/components/home/FeaturesSection";
 import IndustryUseCasesSection from "@/components/home/IndustryUseCasesSection";
 import WhyChooseSection from "@/components/home/WhyChooseSection";
 import TrustSection from "@/components/home/TrustSection";
+import TeamSection from "@/components/home/TeamSection";
 import FAQSection from "@/components/home/FAQSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CTASection from "@/components/home/CTASection";
@@ -30,13 +31,16 @@ const Index = () => {
       {/* 6. Trust Signals */}
       <TrustSection />
       
-      {/* 7. Testimonials */}
+      {/* 7. Meet The Founders */}
+      <TeamSection />
+      
+      {/* 8. Testimonials */}
       <TestimonialsSection />
       
-      {/* 8. FAQ */}
+      {/* 9. FAQ */}
       <FAQSection />
       
-      {/* 9. Final CTA */}
+      {/* 10. Final CTA */}
       <CTASection />
     </Layout>
   );

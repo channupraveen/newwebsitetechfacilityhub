@@ -22,7 +22,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <img 
-              src="/TF HUB LOGO.png" 
+              src="/logo.png" 
               alt="TechFacilityHub Logo" 
               className="w-10 h-10 object-contain"
             />
